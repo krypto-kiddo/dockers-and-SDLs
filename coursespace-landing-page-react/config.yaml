@@ -27,7 +27,7 @@ placement:
     pricing:
       app:
         denom: uakt
-        amount: 3000
+        amount: 5
 
 deployment:
   app:
