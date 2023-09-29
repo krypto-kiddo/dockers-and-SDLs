@@ -1,0 +1,31 @@
+:
+version: '3.7'
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
+.eslintrc.json:
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/
