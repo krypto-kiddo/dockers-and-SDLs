@@ -1,0 +1,30 @@
+# Akash Network Service Description Language (SDL) File
+# Github repo : https://github.com/blueedgetechno/win11React
+version: '2.0'
+services:
+  my-service:
+    image: supervirgo/demo2:latest
+    expose:
+      - port: 3000
+        as: 80
+        to:
+          - global: true
+profiles:
+  compute:
+    my-service:
+      resources:
+        cpu:
+          units: 0.1
+        memory:
+          size: 2Gi
+        storage:
+          - size: 1Gi
+deployment:
+  my-service:
+    akash:
+      profile: my-service
+      count: 1
+      pricing:
+        my-service:
+          denom: uakt
+          amount: 5
